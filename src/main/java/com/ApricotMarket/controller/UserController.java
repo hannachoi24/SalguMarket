@@ -42,6 +42,15 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/mypage/customer")
+    public String getCustomerMypage() {
+        return "/mypage-customer";
+    }
+
+    @GetMapping("/mypage/seller")
+    public String getSellerMypage() {
+        return "/mypage-seller";
+    }
 
     public UserController(UserService userService) {
         this.userService = userService;

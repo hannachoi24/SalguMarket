@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <div th:replace="/fragments/header.html :: fragment-header"></div>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/cursor.css"/>
+    <link rel="stylesheet" href="/css/effect.css"/>
+</head>
+
+<body>
+<div th:replace="/fragments/nav.html :: fragment-nav"></div>
+<main>
+    <section class="py-5">
+        <div class="container">
+            <ol class="breadcrumb ps-0  justify-content-start">
+                <li class="breadcrumb-item customer">구매자</li>
+            </ol>
+            <h1 class="hero-heading mb-0">email@email.com</h1>
+            <div class="row">
+                <div class="mb-5 mb-lg-0">
+                    <div class="text-block">
+                        <div class="row mb-3">
+                            <div class="col-sm-5" style="bottom: 0">
+                                <h5><i class="fas fa-seedling mypage-icon"></i>등급</h5>
+                            </div>
+                            <div class="col-sm-7">
+                                <h5>
+                                    누적 할인 금액
+                                    <span style="font-size: 2.35rem; font-weight: 700; color: #ffa68a; margin-left: 1rem">100000원</span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-block" style="border-bottom: none">
+                        <div class="mb-4 col-sm-9">
+                            <h5>예약한 물품</h5>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                예약 물품 1
+                                <span class="btn btn-primary px-1" style="margin-left: 0.5rem">예약</span>
+                            </div>
+                            <div class="mb-2">
+                                예약 물품 2
+                                <span class="btn btn-secondary px-1" style="margin-left: 0.5rem">완료</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+</body>
+</html>
