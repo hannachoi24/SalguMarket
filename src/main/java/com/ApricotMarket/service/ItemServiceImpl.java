@@ -38,6 +38,7 @@ public class ItemServiceImpl implements ItemService{
         item.setLocation(location);
         item.setExpiryDate(form.getExpiryDate());
         item.setPrice(form.getPrice());
+        item.setDiscount(form.getDiscount());
         this.itemRepository.createLocation(location);
         this.itemRepository.create(item);
     }

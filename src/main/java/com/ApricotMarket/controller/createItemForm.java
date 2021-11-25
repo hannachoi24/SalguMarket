@@ -16,6 +16,7 @@ public class createItemForm {
     private String district;
     private String town;
     private int price;
+    private int discount;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date expiryDate;
     private Category category;

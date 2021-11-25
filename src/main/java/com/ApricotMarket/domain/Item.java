@@ -27,6 +27,8 @@ public class Item {
     private Location location;
     @Column
     private int price;
+    @Column
+    private int discount;
     @Temporal(TemporalType.DATE)
     private Date expiryDate;
     @Enumerated(EnumType.STRING)
