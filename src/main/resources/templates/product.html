@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
-    <head>
-        <div th:replace="/fragments/header.html :: fragment-header"></div>
-        <link rel="stylesheet" href="/css/home.css" />
-        <link rel="stylesheet" href="/css/btn.css" />
-        <link rel="stylesheet" href="/css/cursor.css"/>
-        <script type="text/javascript" src="/js/btn.js"></script>
-    </head>
-    <body>
-        <div th:replace="/fragments/nav.html :: fragment-nav"></div>
-        <main>
-            <section class="py-5">
+<head>
+    <div th:replace="/fragments/header.html :: fragment-header"></div>
+    <link rel="stylesheet" href="/css/home.css" />
+    <!--        <link rel="stylesheet" href="/css/btn.css" />-->
+    <link rel="stylesheet" href="/css/cursor.css"/>
+    <script type="text/javascript" src="/js/btn.js"></script>
+</head>
+<body>
+<div th:replace="/fragments/nav.html :: fragment-nav"></div>
+<main>
+    <section class="py-5">
 
-                <tr th:each="item : ${itemlist}" th:object="${item}" th:if="${item.id} == ${productId}">
-                    <form method="post" th:action="@{/item/detail(id=${item.id})}">
+        <tr th:each="item : ${itemlist}" th:object="${item}" th:if="${item.id} == ${productId}">
+            <form method="post" th:action="@{/item/detail(id=${item.id})}">
 
-                    <div class="container">
+                <div class="container">
                     <ol class="breadcrumb ps-0 justify-content-start">
                         <li class="breadcrumb-item">
                             <!-- 각 제품 카테고리 표시 -->
@@ -25,16 +25,20 @@
                     </ol>
                     <!-- 물품명 -->
                     <div class="row">
-                        <h1 th:text="${item.pdn}"class="hero-heading mb-0 col-lg-7" style="font-weight: 700">
+                        <h1 th:text="${item.pdn}" class="hero-heading mb-0 col-lg-7" style="font-weight: 700">
                             물품명
                         </h1>
-                        <h1 th:text="${item.price} + '원'" class="hero-heading mb-0 text-sm-end col-lg-4" style="font-weight: 700; color: #ffa68a">
+                        <p class="mb-0 col-lg-5" style="display: flex; align-items: center; justify-content: end">
+                            <span th:text="${item.discount} + '원'" style="font-size: 1.5rem; text-decoration: line-through"></span>
+                            <span style="margin: 0 0.5rem; font-size: 2rem; top: 0"> &#10140; </span>
+                            <span th:text="${item.price} + '원'" class="hero-heading text-sm-end " style="font-size: 2.8rem; font-weight: 700; color: #ffa68a; margin-bottom: 0.8rem">
                             1000원
-                        </h1>
-<!--                        <span th:text="${item.price} + '원'" class="float-end" style="color: #ffa68a">1000원</span>-->
+                            </span>
+                        </p>
+                        <!--                        <span th:text="${item.price} + '원'" class="float-end" style="color: #ffa68a">1000원</span>-->
                     </div>
 
-                        <p class="text-muted mb-5"></p>
+                    <p class="text-muted mb-5"></p>
                     <div class="row">
                         <!-- 물품 설명 -->
                         <div class="col-lg-7 mb-5 mb-lg-0">
@@ -76,27 +80,27 @@
                         </div>
                         <div class="row form-block flex-column flex-sm-row" style="border-bottom: none">
                             <div th:if="${item.reserved==null}" class="col text-center text-sm-end">
-                                    <button class="btn btn-primary px-3" type="submit">예약하기</button>
+                                <button class="btn btn-primary px-3" type="submit">예약하기</button>
                             </div>
 
                             <div th:if="${item.reserved!=null}" class="col text-center text-sm-end">
-                                    <button  class="btn btn-primary px-3" type="submit" disabled>예약중</button>
+                                <button  class="btn btn-primary px-3" type="submit" disabled>예약중</button>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                    </form>
-<!--                </tr>-->
-                </tr>
-<!--                <tr th:each="location : ${locationlist}" th:object="${location}" th:if="${location.id} == ${productId}">-->
-<!--                    <td th:text="${location.city}"></td>-->
-<!--                    <td th:text="${location.id}"></td>-->
-<!--                </tr>-->
+            </form>
+            <!--                </tr>-->
+        </tr>
+        <!--                <tr th:each="location : ${locationlist}" th:object="${location}" th:if="${location.id} == ${productId}">-->
+        <!--                    <td th:text="${location.city}"></td>-->
+        <!--                    <td th:text="${location.id}"></td>-->
+        <!--                </tr>-->
 
-            </section>
-        </main>
+    </section>
+</main>
 
-        <footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
-    </body>
+<footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+</body>
 </html>

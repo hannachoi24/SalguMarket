@@ -111,7 +111,6 @@ a {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
     -o-transition-property: transform;
@@ -125,7 +124,6 @@ a {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    width: 24%;
     height: 100%;
     position: relative;
     -webkit-transition-property: -webkit-transform;
@@ -255,4 +253,21 @@ a {
     padding-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e9ecef;
+}
+
+.category > div {
+    padding: 0;
+}
+
+.customer {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 2px 5px;
+}
+
+.mypage-icon {
+    font-size: 2rem;
+    padding-top: 0.4rem;
+    padding-right: 0.3rem;
+    color: #a3cb50;
 }
