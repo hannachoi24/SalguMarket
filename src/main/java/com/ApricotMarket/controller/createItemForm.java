@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -25,4 +23,8 @@ public class createItemForm {
     private String image;
     private String pdn;
     private String Location;
+
+    //추가//
+    private int discountprice;
+    private int originalprice;
 }

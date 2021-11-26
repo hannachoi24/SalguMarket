@@ -1,12 +1,13 @@
 package com.ApricotMarket.service;
 
-import com.ApricotMarket.controller.UserForm;
 import com.ApricotMarket.domain.Role;
 import com.ApricotMarket.domain.User;
 import com.ApricotMarket.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 //public interface UserService {
 //    User save(UserForm user);
@@ -33,11 +34,16 @@ public class UserService {
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         user.setEnabled(true);  // 회원가입하면 활성화로 표시
-
+        user.setMoney(user.getMoney());
+        user.setMileage(user.getMileage());
         Role role = new Role();
         role.setId(1l);
         user.getRoles().add(role);  // role을 어떤 권한을 줄 것인지 저장한다. user_role 테이블에 role_id가 저장된다.
 
         return userRepository.save(user);
+    }
+
+    public List<User> findAll() {
+        return this.userRepository.findAll();
     }
 }

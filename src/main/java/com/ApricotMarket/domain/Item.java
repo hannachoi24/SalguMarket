@@ -3,10 +3,7 @@ package com.ApricotMarket.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -42,4 +39,10 @@ public class Item {
     private User user;
     @Column
     private Boolean reserved;
+
+    // 추가 //
+    @Column
+    private int discountprice;
+    @Column
+    private int originalprice;
 }

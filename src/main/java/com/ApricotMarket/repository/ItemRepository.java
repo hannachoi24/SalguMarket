@@ -19,4 +19,9 @@ public interface ItemRepository {
     List<Item> getAll();
     List<Item> getAllDesc();
     List<Location> getAllLocation();
+
+    // 추가 //
+    List<Item> findReserved();
+    int setUserMoney(int UserId, Long ItemId);
+    int setUserMileage(int UserId, Long ItemId);
 }

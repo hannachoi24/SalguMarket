@@ -13,4 +13,6 @@ public class UserForm {
     private String district;
     private String town;
     private Role1 role1;
+
+    private int money;
 }

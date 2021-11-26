@@ -4,8 +4,6 @@ import com.ApricotMarket.domain.Category;
 import com.ApricotMarket.domain.Item;
 import com.ApricotMarket.domain.Location;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -126,4 +124,32 @@ public class ItemMemoryRepository implements ItemRepository{
 //    void setReservedTrue(@Param("id") Long itemId){
 //
 //    }
+
+    // 유저의 아낀 돈의 양을 누적해서 update //
+    @Modifying
+    @Override
+    public int setUserMoney(int UserId, Long ItemId) {
+//        int m = em.createQuery("update User w set w.money = money + " +
+//                        "( select discountprice from Item where id = :id ) where w.id = :uid")
+        int m = em.createQuery("update User w set w.money=w.money+( select discountprice from Item where id = :id) where w.id = 1")
+                .setParameter("id",ItemId)
+                .executeUpdate();
+        return m;
+    }
+
+    @Override
+    public int setUserMileage(int UserId, Long ItemId) {
+        int m = em.createQuery("update User w set w.mileage=w.mileage+( select discountprice from Item where id = :id)/10 where w.id = 1")
+                .setParameter("id",ItemId)
+                .executeUpdate();
+        return m;
+    }
+
+    // 예약된 물품들의 리스트를 포함 //
+    @Override
+    public List<Item> findReserved(){
+        List<Item> resultList = em.createQuery("select i from Item i where i.reserved != null", Item.class)
+                .getResultList();
+        return resultList;
+    }
 }

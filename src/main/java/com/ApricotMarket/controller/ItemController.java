@@ -110,6 +110,8 @@ public class ItemController {
     public String getItem(@RequestParam("id") Long id, Model model){
         System.out.println("the id is " + id);
         itemService.reserved(id);
+        itemService.moneyed(1,id);
+        itemService.mileaged(1,id);
 
         return "/home";
     }

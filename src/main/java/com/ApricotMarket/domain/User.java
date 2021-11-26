@@ -1,6 +1,5 @@
 package com.ApricotMarket.domain;
 
-import com.ApricotMarket.controller.UserForm;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
@@ -47,4 +46,10 @@ public class User {
     @JsonIgnore
     private final List<Board> boards = new ArrayList<>();
 
+    // 추가 //
+    @Column
+    private int money;
+
+    @Column
+    private int mileage;
 }

@@ -1,12 +1,11 @@
 package com.ApricotMarket.service;
 
 import com.ApricotMarket.controller.createItemForm;
+import com.ApricotMarket.domain.Category;
 import com.ApricotMarket.domain.Item;
 import com.ApricotMarket.domain.Location;
 import com.ApricotMarket.dto.ReservedItemDTO;
 import com.ApricotMarket.repository.ItemRepository;
-import com.ApricotMarket.domain.Category;
-import org.aspectj.weaver.ast.Not;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -39,6 +38,8 @@ public class ItemServiceImpl implements ItemService{
         item.setExpiryDate(form.getExpiryDate());
         item.setPrice(form.getPrice());
         item.setDiscount(form.getDiscount());
+        item.setDiscountprice(form.getDiscountprice());
+        item.setOriginalprice(form.getOriginalprice());
         this.itemRepository.createLocation(location);
         this.itemRepository.create(item);
     }
@@ -108,5 +109,21 @@ public class ItemServiceImpl implements ItemService{
     @Override
     public int reserved(Long id){
         return this.itemRepository.setReservedTrue(id);
+    }
+
+    @Transactional
+    @Override
+    public int moneyed(int userid, Long itemid) {
+        return this.itemRepository.setUserMoney(userid,itemid);
+    }
+
+    @Override
+    public int mileaged(int userid, Long itemid) {
+        return this.itemRepository.setUserMileage(userid,itemid);
+    }
+
+    @Override
+    public List<Item> findReserved() {
+        return this.itemRepository.findReserved();
     }
 }

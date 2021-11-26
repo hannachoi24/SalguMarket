@@ -21,4 +21,8 @@ public interface ItemService {
     int reserved(Long id);
     List<Item> getAll();
     List<Location> getAllLocation();
+
+    int moneyed(int userid, Long itemid);
+    int mileaged(int userid, Long itemid);
+    List<Item> findReserved();
 }
