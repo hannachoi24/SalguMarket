@@ -271,3 +271,11 @@ a {
     padding-right: 0.3rem;
     color: #a3cb50;
 }
+
+.point-img {
+    width: 180px;
+    height: 180px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
