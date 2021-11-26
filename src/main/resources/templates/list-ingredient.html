@@ -46,7 +46,7 @@
                                                     <p class="text-muted text-sm" style="margin-top: 0.5rem" th:text="${item.name}">가게명</p>
                                                     <p class="text-muted text-sm" style="margin-top: 0.5rem" th:text="${item.expiryDate}">유통기한</p>
                                                     <p class="card-text text-muted">
-                                                        <span th:text="${item.price} + '원'" class="text-md" style="text-decoration: line-through">1000원</span>
+                                                        <span th:text="${item.originalprice} + '원'" class="text-md" style="text-decoration: line-through">1000원</span>
                                                         <span style="margin: 0 0.35rem"> &#10140; </span>
                                                         <span th:text="${item.discount} + '원'" class="h4 text-price" style="font-weight: 700">1000원</span>
                                                     </p>

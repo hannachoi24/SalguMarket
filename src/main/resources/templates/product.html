@@ -29,9 +29,9 @@
                             물품명
                         </h1>
                         <p class="mb-0 col-lg-5" style="display: flex; align-items: center; justify-content: end">
-                            <span th:text="${item.discount} + '원'" style="font-size: 1.5rem; text-decoration: line-through"></span>
+                            <span th:text="${item.originalprice} + '원'" style="font-size: 1.5rem; text-decoration: line-through"></span>
                             <span style="margin: 0 0.5rem; font-size: 2rem; top: 0"> &#10140; </span>
-                            <span th:text="${item.price} + '원'" class="hero-heading text-sm-end " style="font-size: 2.8rem; font-weight: 700; color: #ffa68a; margin-bottom: 0.8rem">
+                            <span th:text="${item.discount} + '원'" class="hero-heading text-sm-end " style="font-size: 2.8rem; font-weight: 700; color: #ffa68a; margin-bottom: 0.8rem">
                             1000원
                             </span>
                         </p>
