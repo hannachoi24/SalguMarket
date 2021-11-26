@@ -8,7 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-public class UserServiceImpl implements UserService {
+/*public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private PasswordEncoder passwordEncoder;    //비밀번호 암호화
@@ -18,10 +18,10 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public User save(UserForm user) {
-        /**
+        *//**
          * 여기서 그냥 저장하면 안 될것이다.
          * 그냥 저장하다면 사용자 이름과 비밀번호만 저장하는 꼴..
-         */
+         *//*
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());
@@ -43,4 +43,4 @@ public class UserServiceImpl implements UserService {
 
         return null;
     }
-}
+}*/

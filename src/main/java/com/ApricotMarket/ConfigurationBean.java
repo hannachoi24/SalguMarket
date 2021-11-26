@@ -6,7 +6,7 @@ import com.ApricotMarket.repository.UserRepository;
 import com.ApricotMarket.service.ItemService;
 import com.ApricotMarket.service.ItemServiceImpl;
 import com.ApricotMarket.service.UserService;
-import com.ApricotMarket.service.UserServiceImpl;
+// import com.ApricotMarket.service.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,9 +26,9 @@ public class ConfigurationBean {
 
     }
 
-    @Bean
-    public UserService userService(){ return new UserServiceImpl(userRepository);
-    }
+//    @Bean
+//    public UserService userService(){ return new UserServiceImpl(userRepository);
+//    }
     @Bean
     public ItemRepository itemRepository() { return new ItemMemoryRepository(em);
     }

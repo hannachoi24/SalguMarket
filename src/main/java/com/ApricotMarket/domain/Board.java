@@ -19,17 +19,16 @@ public class Board {
     @Column
     private String title;
     private String content;
-/*
+
     @ManyToOne
     @JoinColumn(name="user_id")
     @JsonIgnore
     private User user;
-  */
-    /*
+
+
     @Column
     private String location;
     @Column
     private String name;
-     */
 
 }

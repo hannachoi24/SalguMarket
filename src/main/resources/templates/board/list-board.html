@@ -9,48 +9,48 @@
     <link rel="stylesheet" href="/css/cursor.css"/>
     <link rel="stylesheet" href="/css/effect.css"/>
     <!-- Bootstrap CSS -->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"-->
-<!--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
     <link href="/css/starter-template.css" th:href="@{/starter-template.css}" rel="stylesheet">
     <link rel="stylesheet" href="/css/board.css" />
 </head>
 
 <body>
-    <div th:replace="/fragments/nav.html :: fragment-nav"></div>
-    <section class="hero py-5 py-lg-7">
-        <div class="container position-relative">
-            <h1 class="hero-heading">번개장터</h1>
-            <div class="row">
-                <div class="col-xl-8 mx-auto">
-                    <p class="text-muted mb-4">반짝세일을 통해 원하는 물품을 보다 저렴하게 구입해 보세요!</p>
-                </div>
+<div th:replace="/fragments/nav.html :: fragment-nav"></div>
+<section class="hero py-5 py-lg-7">
+    <div class="container position-relative">
+        <h1 class="hero-heading">번개장터</h1>
+        <div class="row">
+            <div class="col-xl-8 mx-auto">
+                <p class="text-muted mb-4">반짝세일을 통해 원하는 물품을 보다 저렴하게 구입해 보세요!</p>
             </div>
         </div>
-    </section>
-    <div class="container py-5 px-lg-5">
-        <div>총 건수: <span th:text="${#lists.size(boards)}"></span></div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">번호</th>
-                <th scope="col">제목</th>
-                <th scope="col">지역</th>
-                <th scope="col">작성자</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="board : ${boards}">
-                <td th:text="${board.id}">번호</td>
-                <td><a th:text="${board.title}" th:href="@{/board/form(id=${board.id})}">제목</a></td>
-                <!--<td th:text="${board.user.location}">지역</td>
-                <td th:text="${board.user.username}">작성자</td>-->
-            </tr>
-            </tbody>
-        </table>
-        <div class="text-right col text-center text-sm-end">
-            <a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
-        </div>
     </div>
-    <footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+</section>
+<div class="container py-5 px-lg-5">
+    <div>총 건수: <span th:text="${#lists.size(boards)}"></span></div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">번호</th>
+            <th scope="col">제목</th>
+            <!--<th scope="col">지역</th>-->
+            <th scope="col">작성자</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="board : ${boards}">
+            <td th:text="${board.id}">번호</td>
+            <td><a th:text="${board.title}" th:href="@{/board/form(id=${board.id})}">제목</a></td>
+            <td th:text="${board.name}">작성자</td>-->
+            <!--<td th:text="${board.user.location}">지역</td> -->
+        </tr>
+        </tbody>
+    </table>
+    <div class="text-right col text-center text-sm-end">
+        <a type="button" class="btn btn-primary" th:href="@{/board/form}">글쓰기</a>
+    </div>
+</div>
+<footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
 </body>
 </html>

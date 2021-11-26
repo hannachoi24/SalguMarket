@@ -23,13 +23,14 @@
                         <form method="post" th:action="@{/signin}">
                             <!-- 이메일 -->
                             <div class="mb-3">
-                                <label for="inputEmail" class="form-label">이메일</label>
-                                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="you@example.com" required="" autofocus="" />
+                                <label for="username" class="form-label">이름</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus />
+
                             </div>
                             <!-- 비밀번호 -->
                             <div class="mb-3">
                                 <label for="inputPassword" class="form-label">비밀번호</label>
-                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="" />
+                                <input type="password" id="inputPassword" name="password" autocomplete="on" class="form-control" placeholder="Password" required="" />
                             </div>
                             <div class="col text-center text-sm-end">
                                 <button class="btn btn-primary px-3" type="submit">로그인</button>

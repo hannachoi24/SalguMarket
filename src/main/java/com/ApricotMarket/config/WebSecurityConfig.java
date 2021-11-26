@@ -28,23 +28,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/","/introduce","/css/**", "/signup",
+                    .antMatchers("/","/introduce","/css/**", "/signup",
                         "/item/**","/img/**","/js/**",
-                        "/home","/product","/search","/write","/board/**","/mypage/**").permitAll();
-                /*
-                .anyRequest().authenticated()
-                .and()
+                        "/home","/product","/search","/write", "/board/**").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
                 .formLogin()
-                .loginPage("/signin")
-                .failureForwardUrl("/signup")
-                .defaultSuccessUrl("/")
-                .loginPage("/signin")
-                .permitAll()
-                .and()
+                    .loginPage("/signin")
+                    //.failureForwardUrl("/signup")
+                    //.defaultSuccessUrl("/")
+                    .permitAll()
+                    .and()
                 .logout()
-                .permitAll();
-
-                 */
+                    .permitAll();
     }
 
     @Autowired
@@ -53,14 +49,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource) //jdbcAuthentication에 dataSource를 넘겨주면 스프링에서 인증처리를 한다.
                 .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("select username, email, password, enabled "
+                .usersByUsernameQuery("select username, password, enabled "
                         + "from user "
                         + "where username = ?")    // Authentication
-                .authoritiesByUsernameQuery("select u.username, u.email, r.name "
+                .authoritiesByUsernameQuery("select u.username, r.name "
                         + "from user_role ur inner join user u on ur.user_id = u.id "
                         + "inner join role r on ur.role_id = r.id "
-                        + "where u.username = ?"
-                        + "where u.email");   // Authority        // USER 뿐만 아니라 권한처리에 대한 테이블도 생성..
+                        + "where u.username = ?");   // Authority
+        // USER 뿐만 아니라 권한처리에 대한 테이블도 생성..
         // USER와 ROLE을 연결시켜주는 Mapping Table도 필요하다.
     }
 
