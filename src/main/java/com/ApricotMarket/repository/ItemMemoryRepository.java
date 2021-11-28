@@ -128,19 +128,21 @@ public class ItemMemoryRepository implements ItemRepository{
     // 유저의 아낀 돈의 양을 누적해서 update //
     @Modifying
     @Override
-    public int setUserMoney(int UserId, Long ItemId) {
+    public int setUserMoney(Long UserId, Long ItemId) {
 //        int m = em.createQuery("update User w set w.money = money + " +
 //                        "( select discountprice from Item where id = :id ) where w.id = :uid")
-        int m = em.createQuery("update User w set w.money=w.money+( select discountprice from Item where id = :id) where w.id = 1")
+        int m = em.createQuery("update User w set w.money=w.money+( select discountprice from Item where id = :id) where w.id = :uid")
                 .setParameter("id",ItemId)
+                .setParameter("uid",UserId)
                 .executeUpdate();
         return m;
     }
 
     @Override
-    public int setUserMileage(int UserId, Long ItemId) {
-        int m = em.createQuery("update User w set w.mileage=w.mileage+( select discountprice from Item where id = :id)/10 where w.id = 1")
+    public int setUserMileage(Long UserId, Long ItemId) {
+        int m = em.createQuery("update User w set w.mileage=w.mileage+( select discountprice from Item where id = :id)/10 where w.id = :uid")
                 .setParameter("id",ItemId)
+                .setParameter("uid",UserId)
                 .executeUpdate();
         return m;
     }

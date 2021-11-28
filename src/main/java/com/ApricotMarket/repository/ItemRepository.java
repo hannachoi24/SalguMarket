@@ -22,6 +22,6 @@ public interface ItemRepository {
 
     // 추가 //
     List<Item> findReserved();
-    int setUserMoney(int UserId, Long ItemId);
-    int setUserMileage(int UserId, Long ItemId);
+    int setUserMoney(Long UserId, Long ItemId);
+    int setUserMileage(Long UserId, Long ItemId);
 }

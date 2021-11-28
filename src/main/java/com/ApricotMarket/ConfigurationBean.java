@@ -1,15 +1,12 @@
 package com.ApricotMarket;
 
-import com.ApricotMarket.repository.ItemMemoryRepository;
-import com.ApricotMarket.repository.ItemRepository;
-import com.ApricotMarket.repository.UserRepository;
+import com.ApricotMarket.repository.*;
 import com.ApricotMarket.service.ItemService;
 import com.ApricotMarket.service.ItemServiceImpl;
-import com.ApricotMarket.service.UserService;
-// import com.ApricotMarket.service.UserServiceImpl;
+import com.ApricotMarket.service.checkService;
+import com.ApricotMarket.service.checkServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
@@ -34,6 +31,13 @@ public class ConfigurationBean {
     }
     @Bean
     public ItemService itemService(){ return new ItemServiceImpl(itemRepository());
+    }
+
+    @Bean
+    public checkRepository checkRepository() { return new checkMemoryRepository(em);
+    }
+    @Bean
+    public checkService checkService(){ return new checkServiceImpl(checkRepository());
     }
 
 }

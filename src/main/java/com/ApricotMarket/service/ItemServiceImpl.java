@@ -113,12 +113,12 @@ public class ItemServiceImpl implements ItemService{
 
     @Transactional
     @Override
-    public int moneyed(int userid, Long itemid) {
+    public int moneyed(Long userid, Long itemid) {
         return this.itemRepository.setUserMoney(userid,itemid);
     }
 
     @Override
-    public int mileaged(int userid, Long itemid) {
+    public int mileaged(Long userid, Long itemid) {
         return this.itemRepository.setUserMileage(userid,itemid);
     }
 

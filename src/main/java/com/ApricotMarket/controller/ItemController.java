@@ -1,20 +1,31 @@
 package com.ApricotMarket.controller;
 
 import com.ApricotMarket.domain.Item;
+import com.ApricotMarket.domain.User;
 import com.ApricotMarket.dto.ReservedItemDTO;
 import com.ApricotMarket.service.ItemService;
+import com.ApricotMarket.service.checkService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.List;
+
+;
 
 @Controller
 public class ItemController {
     private final ItemService itemService;
+    private final checkService checkService;
 
-    public ItemController(ItemService itemService) {
+    public ItemController(ItemService itemService, checkService checkService) {
         this.itemService = itemService;
+        this.checkService = checkService;
     }
     //게시글 업로드 양식 띄우기
     @GetMapping("/item/new")
@@ -107,11 +118,18 @@ public class ItemController {
     }
 
     @PostMapping("item/detail")
-    public String getItem(@RequestParam("id") Long id, Model model){
-        System.out.println("the id is " + id);
+    public String getItem(@RequestParam("id") Long id, Model model, Authentication authentication){
+
+        Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
+        String username = checkService.currentUserName();
+
+        User user = checkService.findUser(username).get();
+//        checkService.UserLogin(user.getId());
+//        int inte = user.getId().intValue();
         itemService.reserved(id);
-        itemService.moneyed(1,id);
-        itemService.mileaged(1,id);
+        itemService.moneyed(user.getId(),id);
+        itemService.mileaged(user.getId(),id);
+        checkService.UserLogin(user.getId());
 
         return "/home";
     }

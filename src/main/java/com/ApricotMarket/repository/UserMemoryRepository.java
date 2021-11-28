@@ -158,4 +158,23 @@ public class UserMemoryRepository implements UserRepository {
     public <S extends User> boolean exists(Example<S> example) {
         return false;
     }
+
+//    @Modifying
+//    @Override
+//    public int UserLogin(Long UserId) {
+//        int m = em.createQuery("update User w set w.log=1 where w.id =:id")
+//                .setParameter("id", UserId)
+//                .executeUpdate();
+//        return m;
+//    }
+//
+//    @Modifying
+//    @Override
+//    public int UserLogout(Long UserId) {
+//        int m = em.createQuery("update User w set w.log=0 where w.id =:id")
+//                .setParameter("id", UserId)
+//                .executeUpdate();
+//
+//        return m;
+//    }
 }

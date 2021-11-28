@@ -18,7 +18,7 @@ import java.util.List;
 public class UserService {
 
     // Service 클래스를 이용해서 Test를 작성하기도 유용하다.
-    
+
     @Autowired
     private UserRepository userRepository;
 
@@ -36,6 +36,7 @@ public class UserService {
         user.setEnabled(true);  // 회원가입하면 활성화로 표시
         user.setMoney(user.getMoney());
         user.setMileage(user.getMileage());
+        user.setLog(0);
         Role role = new Role();
         role.setId(1l);
         user.getRoles().add(role);  // role을 어떤 권한을 줄 것인지 저장한다. user_role 테이블에 role_id가 저장된다.
@@ -46,4 +47,5 @@ public class UserService {
     public List<User> findAll() {
         return this.userRepository.findAll();
     }
+
 }

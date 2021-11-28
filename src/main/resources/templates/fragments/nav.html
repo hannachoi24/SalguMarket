@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <a th:href="@{/home}" class="navbar-brand py-1">살구마켓</a>
+                <a th:href="@{/}" class="navbar-brand py-1">살구마켓</a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a th:href="@{/item/cooked}" class="nav-link">완제품</a>
@@ -43,9 +43,7 @@
                     <a th:href="@{/signup}" class="nav-link">회원가입</a>
                 </li>
                 <li class="nav-item">
-                    <form th:action="@{/logout}" method="post">
-                        <a type="submit" class="nav-link">로그아웃</a>
-                    </form>
+                    <a th:href="@{/logout}" class="nav-link">로그아웃</a>
                 </li>
                 <li class="nav-item">
                     <a th:href="@{/mypage/customer}" class="nav-link">마이페이지</a>
@@ -59,7 +57,7 @@
     <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <a th:href="@{/home}" class="navbar-brand py-1">살구마켓</a>
+                <a th:href="@{/}" class="navbar-brand py-1">살구마켓</a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a href="/introduce" class="nav-link">살구마켓이란?</a>
@@ -77,9 +75,7 @@
                     <a th:href="@{/signup}" class="nav-link">회원가입</a>
                 </li>
                 <li class="nav-item">
-                    <form th:action="@{/logout}" method="post">
-                        <a type="submit" class="nav-link">로그아웃</a>
-                    </form>
+                    <a th:href="@{/logout}" class="nav-link">로그아웃</a>
                 </li>
                 <li class="nav-item">
                     <a th:href="@{/mypage/customer}" class="nav-link">마이페이지</a>

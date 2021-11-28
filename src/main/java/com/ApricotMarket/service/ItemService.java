@@ -22,7 +22,7 @@ public interface ItemService {
     List<Item> getAll();
     List<Location> getAllLocation();
 
-    int moneyed(int userid, Long itemid);
-    int mileaged(int userid, Long itemid);
+    int moneyed(Long userid, Long itemid);
+    int mileaged(Long userid, Long itemid);
     List<Item> findReserved();
 }

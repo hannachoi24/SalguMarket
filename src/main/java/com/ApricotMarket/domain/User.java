@@ -52,4 +52,7 @@ public class User {
 
     @Column
     private int mileage;
+
+    @Column
+    private int log;
 }
