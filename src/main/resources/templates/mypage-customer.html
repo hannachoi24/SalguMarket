@@ -28,7 +28,7 @@
                 <div class="text-block">
                     <div class="row mb-3">
                         <div class="col-sm-3" style="bottom: 0">
-                            <h5 style="color:#da831e" ><i class="fas fa-medal mypage-icon"></i>브론즈 등급 (0.5% 적립)</h5>
+                            <h5 style="color:#da831e" th:if="${0 <= user.mileage and user.mileage < 1000}"><i class="fas fa-medal mypage-icon"></i>브론즈 등급 (0.5% 적립)</h5>
 
                             <h5 style="color:#c0c0c0" th:if="${1000 <= user.mileage and user.mileage < 5000}"><i class="fas fa-medal mypage-icon"></i>실버 등급 (1% 적립)</h5>
 
