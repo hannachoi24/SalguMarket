@@ -5,6 +5,7 @@
   <h1 align="center">살구마켓</h1>
 
   <p align="center">
+  <p>숭실대학교 웹/앱서비스 개발 경진대회</p>
    <a href="https://youtu.be/44DPa7CcCNE">발표 및 시연 영상</a>
     ·
    <a href="https://www.miricanvas.com/v/1r22ls">개발 계획서</a>
