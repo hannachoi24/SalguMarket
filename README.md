@@ -21,7 +21,7 @@
 
 살구마켓은 당일 제조, 유통 및 사용되어 신선도에는 이상이 없는 식료품들과 쓰다 남아 버려지는 자재들을 저렴한 가격으로 거래하는 플랫폼입니다.
 
-## Features:
+## Features
 * 회원가입 / 로그인
 * 물품 등록
 * 물품 예약
@@ -39,7 +39,8 @@
 - HTML/CSS
 - Aws EC2
 
-![tech](https://user-images.githubusercontent.com/66726731/233086477-aa0543ed-55c7-485f-b3ea-f94029615746.png)
+
+![tech](https://user-images.githubusercontent.com/66726731/233090006-7132ce80-c4d2-4c81-8f5c-2b3980b6a863.png)
 
 
 
