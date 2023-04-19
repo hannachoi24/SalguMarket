@@ -39,7 +39,8 @@
 - HTML/CSS
 - Aws EC2
 
-![image](https://user-images.githubusercontent.com/66726731/233082738-43243ec9-7045-4c63-9795-633a23852b5f.png)
+![tech](https://user-images.githubusercontent.com/66726731/233086477-aa0543ed-55c7-485f-b3ea-f94029615746.png)
+
 
 
 <!-- CONTACT -->
