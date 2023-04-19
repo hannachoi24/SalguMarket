@@ -31,6 +31,15 @@
 * 물품 상세
 * 마이페이지
 
+## Tech Stack
+- Spring
+- Java
+- MySQL
+- Thymeleaf
+- HTML/CSS
+- Aws EC2
+
+![image](https://user-images.githubusercontent.com/66726731/233082738-43243ec9-7045-4c63-9795-633a23852b5f.png)
 
 
 <!-- CONTACT -->
